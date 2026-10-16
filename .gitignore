@@ -1,0 +1,7 @@
+.env
+*.env
+.cc-supabase.env
+.vercel
+command-center-data.json
+node_modules
+.DS_Store
