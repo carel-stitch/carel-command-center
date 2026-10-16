@@ -22,8 +22,9 @@ function filteredDeals(c){
   });
 }
 function clientRows(){
-  const q=$('#search') ? $('#search').value.toLowerCase().trim() : '';
-  return (data.clients||[]).map(c=>({...c,visibleDeals:filteredDeals(c)})).filter(c=>c.visibleDeals.length||(!q&&statusFilter==='all')||c.client.toLowerCase().includes(q));
+  return (data.clients||[])
+    .map(c=>({...c,visibleDeals:filteredDeals(c)}))
+    .filter(c=>c.visibleDeals.length>0);
 }
 function renderStats(){
   $('#statDeals').textContent=(data.totals?.deals||0)+' SC deals';
